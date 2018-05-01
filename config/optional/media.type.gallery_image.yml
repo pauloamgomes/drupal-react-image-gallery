@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies: {  }
+id: gallery_image
+label: 'Gallery Image'
+description: 'To be used on the Gallery Component'
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_gallery_media_image
+field_map: {  }

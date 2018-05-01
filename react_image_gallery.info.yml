@@ -1,0 +1,13 @@
+name: 'React Image Gallery'
+type: module
+description: 'Provides a Image Gallery based on React Image Gallery Component'
+core: 8.x
+package: Media Gallery
+dependencies:
+  - rest
+  - paragraphs
+  - media
+  - image
+  - serialization
+  - views
+version: null

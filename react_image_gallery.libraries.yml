@@ -1,0 +1,15 @@
+react:
+  js:
+    //unpkg.com/react@16/umd/react.production.min.js:
+      external: true
+    //unpkg.com/react-dom@16/umd/react-dom.production.min.js:
+      external: true
+component:
+  version: VERSION
+  js:
+    js/dist/gallery.js: {}
+  css:
+    component:
+      js/dist/gallery.css: {}
+  dependencies:
+    - core/drupal

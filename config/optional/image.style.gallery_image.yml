@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Zx4ls1lqmMhVSvfsbc2yfRiVTBO8gzDSEzcGCPkmVjo
+name: gallery_image
+label: 'Gallery Image (1920x1280)'
+effects:
+  7fb0ed5b-78b8-47b4-aedb-90d0153935ea:
+    uuid: ''
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1920
+      height: 1280

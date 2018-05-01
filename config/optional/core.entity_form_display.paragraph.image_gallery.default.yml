@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image_gallery.field_gallery_images
+    - paragraphs.paragraphs_type.image_gallery
+id: paragraph.image_gallery.default
+targetEntityType: paragraph
+bundle: image_gallery
+mode: default
+content:
+  field_gallery_images:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

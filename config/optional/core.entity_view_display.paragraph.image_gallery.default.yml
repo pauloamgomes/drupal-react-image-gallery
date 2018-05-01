@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image_gallery.field_gallery_images
+    - paragraphs.paragraphs_type.image_gallery
+  module:
+    - react_image_gallery
+_core:
+  default_config_hash: FxAvvMz07srMLS_pf4Ux3h-t7WMXBhk_kZCxSo7VBOQ
+id: paragraph.image_gallery.default
+targetEntityType: paragraph
+bundle: image_gallery
+mode: default
+content:
+  field_gallery_images:
+    weight: 2
+    label: hidden
+    settings:
+      infinite: true
+      lazyLoad: false
+      showNav: true
+      showThumbnails: true
+      showFullscreenButton: true
+      showPlayButton: true
+      showBullets: false
+      showIndex: false
+      autoPlay: false
+    third_party_settings: {  }
+    type: gallery_field_formatter
+    region: content
+hidden: {  }

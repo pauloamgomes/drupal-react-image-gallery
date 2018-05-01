@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: qqS_ctlAtWM4EFz853mwurtuf7Ql0YLYAv46wbOH36k
+id: media.field_gallery_media_description
+field_name: field_gallery_media_description
+entity_type: media
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

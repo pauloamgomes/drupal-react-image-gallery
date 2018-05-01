@@ -1,0 +1,68 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.gallery_image.field_gallery_media_description
+    - field.field.media.gallery_image.field_gallery_media_image
+    - image.style.gallery_thumbnail
+    - media.type.gallery_image
+  module:
+    - image
+    - user
+id: media.gallery_image.default
+targetEntityType: media
+bundle: gallery_image
+mode: default
+content:
+  created:
+    label: hidden
+    type: timestamp
+    weight: 4
+    region: content
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+  field_gallery_media_description:
+    type: string
+    weight: 2
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_gallery_media_image:
+    type: image
+    weight: 3
+    region: content
+    label: above
+    settings:
+      image_style: gallery_image
+      image_link: ''
+    third_party_settings: {  }
+  name:
+    type: string
+    weight: 0
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  thumbnail:
+    type: image
+    weight: 1
+    label: hidden
+    settings:
+      image_style: gallery_thumbnail
+      image_link: ''
+    region: content
+    third_party_settings: {  }
+  uid:
+    label: hidden
+    type: author
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

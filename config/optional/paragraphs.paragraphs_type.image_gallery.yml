@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: bJ-qLaPzpaEOKFANX3NAPCHgKk80KrMN_wwY_p2fxu0
+id: image_gallery
+label: 'Image Gallery'
+icon_uuid: null
+description: 'Provides an image gallery'
+behavior_plugins: {  }

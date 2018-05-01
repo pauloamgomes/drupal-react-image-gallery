@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: UjjtmwaDF1quyn_-mtzh-Lyc_ZIWF1-6r39ng3nQmXI
+name: gallery_thumbnail
+label: 'Gallery Thumbnail (100x67)'
+effects:
+  77da17fb-62ab-4055-8e66-c71e3db9c4c1:
+    uuid: ''
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 100
+      height: 67

@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_gallery_images
+    - media.type.gallery_image
+    - paragraphs.paragraphs_type.image_gallery
+id: paragraph.image_gallery.field_gallery_images
+field_name: field_gallery_images
+entity_type: paragraph
+bundle: image_gallery
+label: 'Gallery Images'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      gallery_image: gallery_image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

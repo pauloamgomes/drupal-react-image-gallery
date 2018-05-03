@@ -102,10 +102,6 @@ cors.config:
   maxAge: false
   # Sets the Access-Control-Allow-Credentials header.
   supportsCredentials: false
-twig.config:
-  debug: false
-  auto_reload: true
-  cache: false
 ```
 
 ### Author/Maintainer

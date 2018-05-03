@@ -42,6 +42,50 @@ Module depends on Media (core) and Paragraphs module.
 
 7.  Save the content and confirm that the 'React Image Gallery' is loaded in the page.
 
+### Development on the react App
+
+The react app resides in the js directory (/react_image_gallery/js), to build or make changes its required to run:
+
+```
+yarn install
+```
+
+then the app can built:
+
+```
+yarn build
+```
+
+to start the app:
+
+```
+yarn start
+```
+
+When running the app locally it's required to mock in the public/index.html the settings that are passed to the gallery component,
+those settings shall reflect the paragraph id where the gallery is present in Drupal. Its also required to enable CORS settings in Drupal, add the below lines inside parameters attribute to your development.services.yml:
+
+```
+  cors.config:
+    enabled: true
+    # Specify allowed headers, like 'x-allowed-header'.
+    allowedHeaders: ['x-csrf-token', 'authorization', 'content-type', 'accept', 'origin', 'x-requested-with']
+    # Specify allowed request methods, specify ['*'] to allow all possible ones.
+    allowedMethods: ['POST', 'GET', 'OPTIONS']
+    # Configure requests allowed from specific origins.
+    allowedOrigins: ['*']
+    # Sets the Access-Control-Expose-Headers header.
+    exposedHeaders: true
+    # Sets the Access-Control-Max-Age header.
+    maxAge: false
+    # Sets the Access-Control-Allow-Credentials header.
+    supportsCredentials: false
+  twig.config:
+    debug: false
+    auto_reload: true
+    cache: false
+```
+
 ### Author/Maintainer
 
 * Paulo Gomes (pauloamgomes) - https://www.drupal.org/u/pauloamgomes

@@ -28,19 +28,17 @@ Module depends on Media (core) and Paragraphs module.
 
 ### Configuration
 
-1.  Copy/upload the module to the modules directory of your Drupal installation.
+1.  Enable the 'React Image Gallery' module and desired sub-modules in 'Extend'. (/admin/modules)
 
-2.  Enable the 'React Image Gallery' module and desired sub-modules in 'Extend'. (/admin/modules)
+2.  Configure a content type (or a custom block) with an entity reference revisions (Paragraph)
 
-3.  Configure a content type (or a custom block) with an entity reference revisions (Paragraph)
+3.  Create some gallery media items. (/media/add/gallery_image)
 
-4.  Create some gallery media items. (/media/add/gallery_image)
+4.  Create or edit a content of the type configured on step 4 and add a 'Image Gallery' paragraph.
 
-5.  Create or edit a content of the type configured on step 4 and add a 'Image Gallery' paragraph.
+5.  Configure the paragraph with the media items you want.
 
-6.  Configure the paragraph with the media items you want.
-
-7.  Save the content and confirm that the 'React Image Gallery' is loaded in the page.
+6.  Save the content and confirm that the 'React Image Gallery' is loaded in the page.
 
 ### Development on the react App
 
@@ -62,28 +60,52 @@ to start the app:
 yarn start
 ```
 
-When running the app locally it's required to mock in the public/index.html the settings that are passed to the gallery component,
-those settings shall reflect the paragraph id where the gallery is present in Drupal. Its also required to enable CORS settings in Drupal, add the below lines inside parameters attribute to your development.services.yml:
+When running the app locally it's required to mock in the js/public/index.html the settings that are passed to the gallery component,
+those settings shall reflect the paragraph id where the gallery is present in Drupal:
 
 ```
-  cors.config:
-    enabled: true
-    # Specify allowed headers, like 'x-allowed-header'.
-    allowedHeaders: ['x-csrf-token', 'authorization', 'content-type', 'accept', 'origin', 'x-requested-with']
-    # Specify allowed request methods, specify ['*'] to allow all possible ones.
-    allowedMethods: ['POST', 'GET', 'OPTIONS']
-    # Configure requests allowed from specific origins.
-    allowedOrigins: ['*']
-    # Sets the Access-Control-Expose-Headers header.
-    exposedHeaders: true
-    # Sets the Access-Control-Max-Age header.
-    maxAge: false
-    # Sets the Access-Control-Allow-Credentials header.
-    supportsCredentials: false
-  twig.config:
-    debug: false
-    auto_reload: true
-    cache: false
+var drupalSettings = {
+  gallery: {
+    1: {
+      id: '<PARAGRAPH_ENTITY_ID>',
+      element: 'react-image-gallery-block',
+      settings: {
+        'infinite': true,
+        'lazyLoad': true,
+        'showNav': true,
+        'showThumbnails': true,
+        'showFullscreenButton': true,
+        'showPlayButton': true,
+        'showBullets': false,
+        'showIndex': false,
+        'autoPlay': false
+      }
+    }
+  }
+};
+```
+
+Its also required to enable CORS settings in Drupal, add the below lines inside parameters attribute to your development.services.yml:
+
+```
+cors.config:
+  enabled: true
+  # Specify allowed headers, like 'x-allowed-header'.
+  allowedHeaders: ['x-csrf-token', 'authorization', 'content-type', 'accept', 'origin', 'x-requested-with']
+  # Specify allowed request methods, specify ['*'] to allow all possible ones.
+  allowedMethods: ['POST', 'GET', 'OPTIONS']
+  # Configure requests allowed from specific origins.
+  allowedOrigins: ['*']
+  # Sets the Access-Control-Expose-Headers header.
+  exposedHeaders: true
+  # Sets the Access-Control-Max-Age header.
+  maxAge: false
+  # Sets the Access-Control-Allow-Credentials header.
+  supportsCredentials: false
+twig.config:
+  debug: false
+  auto_reload: true
+  cache: false
 ```
 
 ### Author/Maintainer
